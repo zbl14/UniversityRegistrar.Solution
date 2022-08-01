@@ -1,7 +1,17 @@
+using System.Collections.Generic;
+
 namespace UniversityRegistrar.Models
 {
   public class Course
   {
-    // properties, constructors, methods, etc. go here
+    public Course()
+    {
+      this.JoinEntities = new HashSet<CourseStudent>();
+    }
+
+    public int CourseId { get; set; }
+    public string Name { get; set; }
+    public string CourseNum { get; set; }
+    public virtual ICollection<CourseStudent> JoinEntities { get; set; }
   }
 }
