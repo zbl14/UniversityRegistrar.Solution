@@ -1,6 +1,6 @@
-namespace ProjectName.Models
+namespace UniversityRegistrar.Models
 {
-  public class ClassName
+  public class Student
   {
     // properties, constructors, methods, etc. go here
   }
