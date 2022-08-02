@@ -45,7 +45,7 @@ namespace UniversityRegistrar.Controllers
     public ActionResult Edit(int id)
     {
       ViewBag.PageTitle="Edit";
-      var thisStudent = _db.Items.FirstOrDefault(student => student.StudentId == id);
+      var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
       ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "Name");
       return View(thisStudent);
     }
@@ -88,6 +88,31 @@ namespace UniversityRegistrar.Controllers
         _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = student.StudentId });
         _db.SaveChanges();
       }
+      return RedirectToAction("Index");
+    }
+    
+    public ActionResult Delete(int id)
+    {
+      ViewBag.PageTitle = "UnEnroll Student";
+      var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+      return View(thisStudent);
+    }
+    
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+      _db.Students.Remove(thisStudent);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+    
+    [HttpPost]
+    public ActionResult DeleteCourse(int joinId)
+    {
+      var joinEntry = _db.CourseStudent.FirstOrDefault(entry => entry.CourseStudentId == joinId);
+      _db.CourseStudent.Remove(joinEntry);
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
   }

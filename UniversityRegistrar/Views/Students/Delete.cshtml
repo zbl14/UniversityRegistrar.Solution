@@ -2,4 +2,19 @@
   Layout = "_Layout";
 }
 
-@using UniversityRegistrar.Models;
+@model UniversityRegistrar.Models.Student;
+
+<div class="jumbotron text-center">
+  <h2>UnEnroll @Html.DisplayFor(model => model.Name)?</h2>
+</div>
+
+@using(Html.BeginForm())
+{
+  <button type="submit" class="btn btn-danger">UnEnroll</button>
+}
+
+<div class="sideBar">
+  <p>@Html.ActionLink("All Students", "Index")</p>
+  <br>
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</div>
