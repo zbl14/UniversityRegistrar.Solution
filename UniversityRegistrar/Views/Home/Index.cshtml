@@ -5,10 +5,13 @@
 <div class="jumbotron text-center">
   <h1>Welcome to Epicodus University!</h1>
 </div>
-
-<h4>@Html.ActionLink("View all students", "Index", "Students")</h4>
-<h4>@Html.ActionLink("View all courses", "Index", "Courses")</h4>
-
+<div class="text-center">
+  <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("View all students", "Index", "Students")</button>
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("View all courses", "Index", "Courses")</button>
+  </div>
+</div>
+<hr />
 <div>
   <img src='~/img/background.jpg' class="img-fluid" alt="background img" />
 </div>
