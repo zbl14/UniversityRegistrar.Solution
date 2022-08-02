@@ -1,6 +1,6 @@
 # Univserity Registrar
 
-#### By _**Zhibin Liang**_  
+#### By _**Zhibin Liang**_, _**Liam Campbell**_
 
 #### 
 
