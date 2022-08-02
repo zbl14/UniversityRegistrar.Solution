@@ -12,6 +12,7 @@ namespace UniversityRegistrar.Models
     public int CourseId { get; set; }
     public string Name { get; set; }
     public string CourseNum { get; set; }
+    public int DepartmentId { get; set; }
     public virtual ICollection<CourseStudent> JoinEntities { get; set; }
   }
 }

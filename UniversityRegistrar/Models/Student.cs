@@ -13,6 +13,7 @@ namespace UniversityRegistrar.Models
 
     public int StudentId { get; set; }
     public string Name { get; set; }
+    public int DepartmentId { get; set; }
 
     [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString = "{0:MM/dd/yyyy}")]
     public DateTime EnrollmentDate { get; set; }
