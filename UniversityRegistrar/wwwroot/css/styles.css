@@ -13,6 +13,7 @@ div#footer {
   margin-bottom: 2rem;
   background-color: var(--bs-light);
   border-radius: .3rem;  
+  text-transform: uppercase;
 }
 
 .sideBar {
@@ -33,10 +34,23 @@ div#footer {
   margin-top: 10px;
   font-size: larger;
   letter-spacing: 3px;
+  text-align: justify;
 }
 
 .sideBar:hover {
   border-radius: 8px;
   background-color: slategrey;
   color: steelblue;
+}
+
+.col-6{
+  float: right;
+  text-align: center;
+  letter-spacing: 3px;
+  text-align: justify;
+  margin-left: 30%;
+}
+
+.col-1{
+  float: left;
 }

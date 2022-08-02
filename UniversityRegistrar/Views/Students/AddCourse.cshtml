@@ -3,11 +3,10 @@
 }
 
 @model UniversityRegistrar.Models.Student
-
-<h2>Add a Course</h2>
-
-<h4>Add a course for @Html.DisplayFor(model => model.Name)</h4>
-
+<div class="jumbotron text-center">
+  <h2>Add a Course</h2>
+  <h4>Add a course for @Html.DisplayFor(model => model.Name)</h4>
+</div>
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.StudentId)
@@ -17,6 +16,8 @@
   <br/>
   <button type="submit" class="btn btn-primary">Add Course</button>
 }
-
-<p>@Html.ActionLink("Back to Students", "Index")</p>
+<div class="sideBar">
+  <p>@Html.ActionLink("Back to Students", "Index")</p>
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</div>
 

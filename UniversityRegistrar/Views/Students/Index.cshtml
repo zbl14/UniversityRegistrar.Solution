@@ -18,6 +18,7 @@
 {
   <li>@Html.ActionLink($"{student.Name}", "Details", new { id = student.StudentId })</li>
 }
-
-<p>@Html.ActionLink("Add new student", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<div class="sideBar">
+  <p>@Html.ActionLink("Add new student", "Create")</p>
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</div>
