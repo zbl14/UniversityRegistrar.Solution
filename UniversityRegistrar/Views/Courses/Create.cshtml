@@ -4,7 +4,15 @@
 
 @model UniversityRegistrar.Models.Course
 
-<h2>Add a new Course</h2>
+<div class="jumbotron text-center">
+  <h2>Add a new Course</h2>
+</div>
+
+<div class="text-center">
+  <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Show all course", "Index")</button>
+  </div>
+</div>
 
 @using (Html.BeginForm())
 {
@@ -16,5 +24,3 @@
 
   <button type="submit" class="btn btn-primary">Add new course</button>
 }
-
-<p>@Html.ActionLink("Show all course", "Index")</p>
