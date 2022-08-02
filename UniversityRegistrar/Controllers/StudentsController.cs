@@ -34,13 +34,23 @@ namespace UniversityRegistrar.Controllers
     {
       _db.Students.Add(student);
       _db.SaveChanges();
-        if (CourseId != 0)
-        {
-          _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = student.StudentId });
-          _db.SaveChanges();
-        }
-        return RedirectToAction("Index");
-     }
+      if (CourseId != 0)
+      {
+        _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = student.StudentId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      ViewBag.PageTitle="Student Details";
+      var thisStudent = _db.Students
+        .Include(student => student.JoinEntities)
+        .ThenInclude(join => join.Course)
+        .FirstOrDefault(student => student.StudentId == id);
+      return View(thisStudent);
+    }
 
     public ActionResult AddCourse(int id)
     {
