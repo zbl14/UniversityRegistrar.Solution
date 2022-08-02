@@ -2,4 +2,12 @@
   Layout = "_Layout";
 }
 
-@using UniversityRegistrar.Models;
+@model UniversityRegistrar.Models.Student
+
+<div class="jumbotron text-center">
+  <h2>Details of @Html.DisplayFor(model => model.Name) </h2>
+</div>
+<div>
+  @Html.Label("Enrollment Date")
+  @Html.DisplayFor(model => model.EnrollmentDate)
+</div>
