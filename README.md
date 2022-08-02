@@ -1,64 +1,79 @@
-# {C# Application Name}
+# Univserity Registrar
 
 #### By _**Zhibin Liang**_  
 
-#### _{Brief description of application}_  
+#### 
 
 ---
 ## Technologies Used
 
 * _C#_
-* _.NET_
-* _HTML_
-* _CSS_
+* _HTML/CSS_
+* _ASP.Net Core MVC_
+* _Entity Framework_
+* _MySQL_
 
 ---
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+
 
 ---
 ## Setup/Installation Requirements
 
 <details>
 <summary><strong>To Setup</strong></summary>
-<li>Install <em>Microsoft .NET SDK<em></li>
-<li>Clone the repo
 
-```
-$ git clone
-```
-</li>
+* Requires _MySQL_ for the database
+* Install _Microsoft .NET SDK_
+* Clone the repo
+    ```
+    $ git clone
+    ```
 </details>
 
 <details>
 <summary><strong>To Run</strong></summary>
-Navigate to  
-   <pre>ProjectName.Solution
-   ├── <strong>ProjectName</strong>
-   └── ProjectName.Tests</pre>
 
-```
-$ dotnet restore
-```
-```
-$ dotnet run
-```
+* Navigate to  
+   <pre>UniversityRegistrar.Solution
+   ├── <strong>UniversityRegistrar</strong>
+   └── UniversityRegistrar.Tests</pre>
+* Create ```appsettings.json``` in the directory of _UniversityRegistrar_, and add following to the file with your MySQL username and password
+    ```
+    {
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Port=3306;database=university_registrar;uid=[username];pwd=[password];"
+    }
+    }
+    ```
+* Import the database in the root of UniversityRegistrar.Solution
+* Run following commands
+    ```
+    $ dotnet restore
+    ```
+    ```
+    $ dotnet build
+    ```
+    ```
+    $ dotnet run
+    ```
 </details>
 
 <details>
 <summary><strong>For Testing</strong></summary>
-Navigate to  
-    <pre>ProjectName.Solution
-    ├── ProjectName
-    └── <strong>ProjectName.Tests</strong></pre>
 
-```
-$ dotnet restore
-```
-```
-$ dotnet test
-```
+* Navigate to  
+    <pre>UniversityRegistrar.Solution
+    ├── UniversityRegistrar
+    └── <strong>UniversityRegistrar.Tests</strong></pre>
+* Run following commands
+    ```
+    $ dotnet restore
+    ```
+    ```
+    $ dotnet test
+    ```
 
 </details>
 <br/>
@@ -68,8 +83,7 @@ This program was built using *`Microsoft .NET SDK 5.0.401`*, and may not be comp
 ---
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* 
 
 ## License
 MIT
