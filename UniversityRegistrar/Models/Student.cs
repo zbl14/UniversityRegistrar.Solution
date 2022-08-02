@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace UniversityRegistrar.Models
 {
@@ -12,6 +13,8 @@ namespace UniversityRegistrar.Models
 
     public int StudentId { get; set; }
     public string Name { get; set; }
+
+    [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString = "{0:MM/dd/yyyy}")]
     public DateTime EnrollmentDate { get; set; }
 
     public virtual ICollection<CourseStudent> JoinEntities { get; set; }
