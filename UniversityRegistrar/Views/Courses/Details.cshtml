@@ -4,7 +4,9 @@
 
 @model UniversityRegistrar.Models.Course
 
-<h2></h2>@Html.DisplayFor(model => model.Name) Details</h2>
+<div class="jumbotron text-center">
+  <h2>@Html.DisplayFor(model => model.Name) Details</h2>
+</div>
 
 @if(@Model.JoinEntities.Count == 0)
 {
