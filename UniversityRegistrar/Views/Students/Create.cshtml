@@ -4,17 +4,15 @@
 
 @model UniversityRegistrar.Models.Student
 <div class="jumbotron text-center">
-  <h4>Add new Student</h4>
+  <h2>Add new Student</h2>
 </div>
-
-<div class="row">
-  <div class="col-1">
-    <div class="sideBar">
-  <p>@Html.ActionLink("Home", "Index", "Home")</p>
-  <p>@Html.ActionLink("Back to all students", "Index")</p>
-    </div>
+<div class="text-center">
+  <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Back to all students", "Index")</button>
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Home", "Index", "Home")</button>
   </div>
-  <div class="col-6">
+</div>
+<hr />
 @using (Html.BeginForm())
 {
   @Html.Label("Date Of Enrollment") 
@@ -28,8 +26,5 @@
   @Html.Label("Select Course")
   @Html.DropDownList("CourseId") 
 
-  
   <button type="Submit" class="btn btn-primary">Add Student</button>
 }
-  </div>
-</div>
