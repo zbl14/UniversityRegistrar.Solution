@@ -26,6 +26,7 @@ namespace UniversityRegistrar.Controllers
     {
       ViewBag.PageTitle = "New Student";
       ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "Name");
+      ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "DepartmentName");
       return View();
     }
 
@@ -47,6 +48,7 @@ namespace UniversityRegistrar.Controllers
       ViewBag.PageTitle="Edit";
       var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
       ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "Name");
+      ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "DepartmentName");
       return View(thisStudent);
     }
 

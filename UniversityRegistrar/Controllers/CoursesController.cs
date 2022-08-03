@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using UniversityRegistrar.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace UniversityRegistrar.Controllers
 {
@@ -16,15 +17,16 @@ namespace UniversityRegistrar.Controllers
     }
 
     public ActionResult Index()
-    {
-      List<Course> model = _db.Courses.ToList();
+    { 
       ViewBag.PageTitle = "All Courses";
+      List<Course> model = _db.Courses.ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
       ViewBag.PagTitle = "New Course";
+      ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "DepartmentName");
       return View();
     }
 
@@ -48,7 +50,9 @@ namespace UniversityRegistrar.Controllers
 
     public ActionResult Edit(int id)
     {
+      ViewBag.Title = "Edit Course";
       var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
+      ViewBag.DepartmentId = new SelectList(_db.Departments, "DepartmentId", "DepartmentName");
       return View(thisCourse);
     }
 
