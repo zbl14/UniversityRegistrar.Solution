@@ -4,12 +4,19 @@
 
 @model UniversityRegistrar.Models.Course
 
+<div class="text-center">
+  <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Back to list", "Index")</button>
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Home", "Index", "Home")</button>
+  </div>
+</div>
+<hr />
 <div class="jumbotron text-center">
   <h2>Are you sure you want to delete @Html.DisplayFor(model => model.Name)?</h2>
 </div>
-
-@using (Html.BeginForm())
-{
-  <button type="submit" class="btn btn-danger">Delete</button>
-}
-@Html.ActionLink("Back to List", "Index")
+<div>
+  @using (Html.BeginForm())
+  {
+    <button type="submit" class="btn btn-danger">Delete</button>
+  }
+</div>

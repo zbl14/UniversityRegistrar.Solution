@@ -7,7 +7,16 @@
 <div class="jumbotron text-center">
   <h2>@Html.DisplayFor(model => model.Name) Details</h2>
 </div>
-
+<div class="text-center">
+  <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Add new student", "Create", "Students")</button>
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</button>
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</button>
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Back to list", "Index")</button>
+    <button type="button" class="btn btn-outline-dark">@Html.ActionLink("Home", "Index", "Home")</button>
+  </div>
+</div>
+<hr />
 @if(@Model.JoinEntities.Count == 0)
 {
   <p>This course does not contain any students</p>
@@ -22,8 +31,3 @@ else
     }  
   </ul>
 }
-
-<p>@Html.ActionLink("Add new student", "Create", "Students")</p>
-<p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
